@@ -1,0 +1,79 @@
+---
+title: "MyTalk"
+output: 
+  flexdashboard::flex_dashboard:
+    theme: flatly
+    css: www/styles.css
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(shinymaterial)
+library(shinydashboard)
+library(shiny)
+library(highcharter)
+library(magrittr)
+```
+
+# Agenda
+
+Column
+----------------------------------------
+### Big Picture and Talk Highlights
+- *Promote R into Production (Keynote by Joe)*
+- Reproducible and **Pretty Research**
+- Ending Key Note: Public Work (David Robinson)
+- Various topics in Visualization, Database, Modeling etc.
+- https://github.com/kbroman/RStudioConf2019Slides
+
+### Chart 3
+```{r}
+
+```
+
+Column
+---------------------
+### R in Production
+- Challenges: Cutural/Organizational/Technical
+- TMobile made R in Production
+- ~~shinytest, shinyloadtest~~
+- --profvis--
+- --plot caching (for example landing screen)--
+- reticulate R + Python
+
+### Chart 4
+
+```{r, echo=FALSE}
+highchart() %>%
+  hc_chart(type = "pie") %>% 
+  hc_xAxis(categories = iris$Species) %>% 
+  hc_add_series(iris$Sepal.Length, name = "Fruit Consumption", showInLegend = FALSE) 
+```
+
+# gt package
+
+Column
+-----------------------
+
+### Highcharter
+
+```{r, echo=FALSE}
+fillRow(
+ highcharter::highchart() %>%
+  hc_chart(type = "column") %>%
+  hc_add_series(iris$Sepal.Length)
+)
+```
+
+Column
+--------------------
+
+### box title
+
+
+# gganimate
+
+
+
